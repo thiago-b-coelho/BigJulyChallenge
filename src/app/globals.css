@@ -2,26 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@layer components {
+  .custom-input {
+    @apply block w-72 py-2.5 text-sm text-white bg-transparent border-0 border-b-2 border-white/40 appearance-none dark:focus:border-cyan-600 focus:outline-none focus:ring-0 focus:text-white focus:border-cyan-600;
+  }
+
+  .moving-label {
+    @apply absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6;
+  }
+
+  .glass-card {
+    @apply bg-black/40 rounded-md p-8 shadow-xl backdrop-filter backdrop-blur-sm bg-opacity-30 relative;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+
+  .primary-button {
+    @apply w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-cyan-600 hover:bg-cyan-600 hover:text-white py-2 transition-colors duration-300;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+}
+
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, ;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+} */
