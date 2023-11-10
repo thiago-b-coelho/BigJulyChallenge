@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({isDisabled, btnType, containerStyle, textStyle, title, rightIcon, handleClick}) => {
+const Button = ({isDisabled, btnType, containerStyle, title, rightIcon, handleClick}) => {
   return (
     <button disabled={isDisabled ?? false} type={btnType || "button"} className={`${containerStyle}`} onClick={handleClick}>
       <span className='flex-1'>{title}</span>
